@@ -1,0 +1,1087 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "IdentityApplicantTypes",
+    "description": "Applicant Types of different Schools",
+    "version": "v1",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "api.byu.edu",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/domains/identity/applicant_types",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/{ces_school},{applicant_type}/logs": {
+      "x-controller": "applicant_type_logs",
+      "get": {
+        "summary": "Get a group of logs for a specific applicant type",
+        "description": "Retrieve the collection of logs for an applicant type",
+        "operationId": "getApplicantTypeLogs",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ces_school"
+          },
+          {
+            "$ref": "#/parameters/applicant_type"
+          },
+          {
+            "$ref": "#/parameters/page_start"
+          },
+          {
+            "$ref": "#/parameters/page_size"
+          }
+        ],
+        "tags": [
+          "Logs"
+        ],
+        "responses": {
+          "200": {
+            "description": "A collection of applicant type logs",
+            "schema": {
+              "$ref": "#/definitions/applicant_type_logs"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/applicant_type_logs"
+              }
+            }
+          },
+          "400": { "$ref": "#/responses/400" },
+          "401": { "$ref": "#/responses/401" },
+          "403": { "$ref": "#/responses/403" },
+          "404": {
+            "description": "There is no matching ces_school/applicant type",
+            "schema": {
+              "$ref": "#/definitions/simple_metadata"
+            }
+          },
+          "409": { "$ref": "#/responses/409" },
+          "default": { "$ref": "#/responses/default" }
+        }
+      }
+    },
+    "/{ces_school},{applicant_type}": {
+      "x-controller": "applicant_type",
+      "get": {
+        "summary": "Get one specific applicant type in a specific school",
+        "description": "Retrieve a specific applicant type",
+        "operationId": "getApplicantType",
+        "parameters": [
+          { "$ref": "#/parameters/ces_school" },
+          { "$ref": "#/parameters/applicant_type" }
+        ],
+        "tags": [
+          "Applicant Type"
+        ],
+        "responses": {
+          "200": {
+            "description": "A specific applicant type",
+            "schema": {
+              "$ref": "#/definitions/applicant_type_data"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/applicant_types/values/0"
+              }
+            }
+          },
+          "400": { "$ref": "#/responses/400" },
+          "401": { "$ref": "#/responses/401" },
+          "403": { "$ref": "#/responses/403" },
+          "404": {
+            "description": "There is no matching ces_school/applicant type",
+            "schema": {
+              "$ref": "#/definitions/simple_metadata"
+            }
+          },
+          "409": { "$ref": "#/responses/409" },
+          "default": { "$ref": "#/responses/default" }
+        }
+      },
+      "put": {
+        "summary": "Change a specific applicant type in a specific school",
+        "description": "Modify an applicant type",
+        "operationId": "modifyApplicantType",
+        "parameters": [
+          { "$ref": "#/parameters/ces_school" },
+          { "$ref": "#/parameters/applicant_type" },
+          {
+            "name": "applicant_type_modify",
+            "in": "body",
+            "description": "Values required to modify an applicant type",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/applicant_type_new"
+            }
+          }
+        ],
+        "tags": [
+          "Applicant Type"
+        ],
+        "responses": {
+          "200": {
+            "description": "Application type successfully modified",
+            "schema": {
+              "$ref": "#/definitions/applicant_type_data"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/applicant_types/values/0"
+              }
+            }
+          },
+          "400": { "$ref": "#/responses/400" },
+          "401": { "$ref": "#/responses/401" },
+          "403": { "$ref": "#/responses/403" },
+          "404": {
+            "description": "There is no matching ces_school/applicant type",
+            "schema": {
+              "$ref": "#/definitions/simple_metadata"
+            }
+          },
+          "409": { "$ref": "#/responses/409" },
+          "default": { "$ref": "#/responses/default" }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific applicant type in a specific school",
+        "description": "Removes an applicant type",
+        "operationId": "removeApplicantType",
+        "parameters": [
+          { "$ref": "#/parameters/ces_school" },
+          { "$ref": "#/parameters/applicant_type" }
+        ],
+        "tags": [
+          "Applicant Type"
+        ],
+        "responses": {
+          "204": {
+            "description": "Applicant type successfully removed"
+          },
+          "400": { "$ref": "#/responses/400" },
+          "401": { "$ref": "#/responses/401" },
+          "403": { "$ref": "#/responses/403" },
+          "default": { "$ref": "#/responses/default" }
+        }
+      }
+    },
+    "/": {
+      "x-controller": "applicant_types",
+      "get": {
+        "summary": "Get every applicant type",
+        "description": "Retrieve a collection of schools and their applicant types",
+        "operationId": "getApplicantTypes",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ces_school_query"
+          },
+          {
+            "$ref": "#/parameters/applicant_type_query"
+          },
+          {
+            "$ref": "#/parameters/active_status_query"
+          },
+          {
+            "$ref": "#/parameters/page_start"
+          },
+          {
+            "$ref": "#/parameters/page_size"
+          }
+        ],
+        "tags": [
+          "Root"
+        ],
+        "responses": {
+          "200": {
+            "description": "A collection of schools and their applicant types",
+            "schema": {
+              "$ref": "#/definitions/applicant_types"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/applicant_types"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "description": "There is no applicant type that matches the queries",
+            "schema": {
+              "$ref": "#/definitions/simple_metadata"
+            }
+          },
+          "409": {
+            "$ref": "#/responses/409"
+          },
+          "default": {
+            "$ref": "#/responses/default"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new applicant type",
+        "description": "Creates an applicant type",
+        "operationId": "createApplicantType",
+        "parameters": [
+          {
+            "name": "applicant_type",
+            "in": "body",
+            "description": "New applicant type value",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/applicant_type_new"
+            }
+          }
+        ],
+        "tags": [
+          "Root"
+        ],
+        "responses": {
+          "201": {
+            "description": "ces_school successfully created",
+            "schema": {
+              "$ref": "#/definitions/applicant_type_data"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/applicant_types/values/0"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "409": {
+            "$ref": "#/responses/409"
+          },
+          "default": {
+            "$ref": "#/responses/default"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "applicant_types": {
+      "description": "The applicant type collection",
+      "type": "object",
+      "required": [
+        "values"
+      ],
+      "properties": {
+        "links": {
+          "description": "Hypermedia Links that impact the applicant type collection",
+          "type": "object",
+          "properties": {
+            "applicant_types__info": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "self"
+                  ],
+                  "default": "self"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "applicant_types__prev": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "applicant_types__prev"
+                  ],
+                  "default": "applicant_types__prev"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "applicant_types__next": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "applicant_types__next"
+                  ],
+                  "default": "applicant_types__next"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "applicant_types__create": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "applicant_types__create"
+                  ],
+                  "default": "applicant_types__create"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "POST"
+                  ],
+                  "default": "POST"
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/sub_level_metadata"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/applicant_type_data"
+          }
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types"
+      }
+    },
+    "applicant_type_data": {
+      "description": "The basic field set for an applicant type",
+      "type": "object",
+      "properties": {
+        "links": {
+          "description": "Hypermedia Links that impact a specific applicant type",
+          "type": "object",
+          "properties": {
+            "applicant_types__info": {
+              "description": "Hypermedia link to retrieve a specific applicant type",
+              "type": "object",
+              "required": [
+                "rel",
+                "href",
+                "method"
+              ],
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "self"
+                  ],
+                  "default": "self"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1/:ces_school,:applicant_type"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "applicant_types__modify": {
+              "description": "Hypermedia link to modify a specific applicant type",
+              "type": "object",
+              "required": [
+                "rel",
+                "href",
+                "method"
+              ],
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "applicant_types__modify"
+                  ],
+                  "default": "applicant_types__modify"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1/:ces_school,:applicant_type"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "PUT"
+                  ],
+                  "default": "PUT"
+                }
+              }
+            },
+            "applicant_types__remove": {
+              "description": "Hypermedia link to remove a specific applicant type",
+              "type": "object",
+              "required": [
+                "rel",
+                "href",
+                "method"
+              ],
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "applicant_types__remove"
+                  ],
+                  "default": "applicant_types__remove"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1/:ces_school,:applicant_type"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "DELETE"
+                  ],
+                  "default": "DELETE"
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/simple_metadata"
+        },
+        "ces_school": {
+          "$ref": "#/definitions/ces_school"
+        },
+        "applicant_type": {
+          "$ref": "#/definitions/applicant_type"
+        },
+        "description": {
+          "$ref": "#/definitions/description"
+        },
+        "long_description": {
+          "$ref": "#/definitions/long_description"
+        },
+        "updated_by_id": {
+          "$ref": "#/definitions/updated_by_id"
+        },
+        "date_time_updated": {
+          "$ref": "#/definitions/date_time_updated"
+        },
+        "active_status": {
+          "$ref": "#/definitions/active_status"
+        },
+        "transfer_threshold": {
+          "$ref": "#/definitions/transfer_threshold"
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0"
+      }
+    },
+    "applicant_type_new": {
+      "description": "Elements required to add a new applicant type",
+      "type": "object",
+      "required": [
+        "ces_school",
+        "applicant_type",
+        "description",
+        "long_description",
+        "updated_by_id",
+        "active_status",
+        "transfer_threshold"
+      ],
+      "properties": {
+        "ces_school": {
+          "$ref": "#/definitions/ces_school"
+        },
+        "applicant_type": {
+          "$ref": "#/definitions/applicant_type"
+        },
+        "description": {
+          "$ref": "#/definitions/description"
+        },
+        "long_description": {
+          "$ref": "#/definitions/long_description"
+        },
+        "updated_by_id": {
+          "$ref": "#/definitions/updated_by_id"
+        },
+        "active_status": {
+          "$ref": "#/definitions/active_status"
+        },
+        "transfer_threshold": {
+          "$ref": "#/definitions/transfer_threshold"
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/applicant_type_new"
+      }
+    },
+    "applicant_type_logs": {
+      "description": "Change Logs for applicant types API",
+      "type": "object",
+      "properties": {
+        "links": {
+          "description": "Hypermedia Links that impact the log collection for ces_school",
+          "type": "object",
+          "properties": {
+            "applicant_type_logs__info": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "self"
+                  ],
+                  "default": "self"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1/:ces_school,:applicant_type/logs?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "applicant_type_logs__prev": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "applicant_type_logs__prev"
+                  ],
+                  "default": "applicant_type_logs__prev"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1/:ces_school,:applicant_type/logs?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "applicant_type_logs__next": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "applicant_type_logs__next"
+                  ],
+                  "default": "applicant_type_logs__next"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/applicant_types/v1/:ces_school,:applicant_type/logs?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/sub_level_metadata"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/applicant_type_log"
+          }
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/applicant_type_logs"
+      }
+    },
+    "applicant_type_log": {
+      "description": "Change Log for applicant types API",
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/simple_metadata"
+        },
+        "log_action": {
+          "$ref": "#/definitions/log_action"
+        },
+        "ces_school": {
+          "$ref": "#/definitions/ces_school"
+        },
+        "applicant_type": {
+          "$ref": "#/definitions/applicant_type"
+        },
+        "description": {
+          "$ref": "#/definitions/description"
+        },
+        "long_description": {
+          "$ref": "#/definitions/long_description"
+        },
+        "updated_by_id": {
+          "$ref": "#/definitions/updated_by_id"
+        },
+        "date_time_updated": {
+          "$ref": "#/definitions/date_time_updated"
+        },
+        "active_status": {
+          "$ref": "#/definitions/active_status"
+        },
+        "transfer_threshold": {
+          "$ref": "#/definitions/transfer_threshold"
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/applicant_type_logs/values/0"
+      }
+    },
+    "sub_level_metadata": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "collection_size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "page_start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "page_end": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "page_size": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "default_page_size": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_page_size": {
+              "type": "integer"
+            }
+          }
+        },
+        {
+          "$ref": "#/definitions/simple_metadata"
+        }
+      ]
+    },
+    "simple_metadata": {
+      "type": "object",
+      "required": ["validation_response"],
+      "properties": {
+        "validation_response": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "type": "integer"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        },
+        "validation_information": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cache": {
+          "description": "If data is from live source, value will be null, otherwise it will be date-time of cache",
+          "type": "object",
+          "properties": {
+            "date_time": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "ces_school": {
+      "description": "The ces_school's name that uses this applicant type",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0/ces_school"
+      }
+    },
+    "applicant_type": {
+      "description": "The Applicant Type",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0/applicant_type"
+      }
+    },
+    "description": {
+      "description": "Applicant type short description",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0/description"
+      }
+    },
+    "long_description": {
+      "description": "Applicant type long description",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0/long_description"
+      }
+    },
+    "updated_by_id": {
+      "description": "Who last updated the applicant_type's data?",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0/updated_by_id"
+      }
+    },
+    "date_time_updated": {
+      "description": "When was the ces_school's data last updated?",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0/date_time_updated"
+      }
+    },
+    "log_action": {
+      "description": "What function was performed on the applicant type",
+      "type": "string",
+      "enum": [
+        "applicant_types__create",
+        "applicant_types__modify",
+        "applicant_types__remove"
+      ],
+      "example": { "$ref": "#/x-mock_json/applicant_type_logs/values/0/log_action" }
+    },
+    "active_status": {
+      "description": "If the applicant type can be used",
+      "type": "string",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "default": "yes",
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0/active_status"
+      }
+    },
+    "transfer_threshold": {
+      "description": "The number of credits required to declare this applicant type (if 0, then any number of credits are allowed)",
+      "type": "string",
+      "default": "0",
+      "example": {
+        "$ref": "#/x-mock_json/applicant_types/values/0/transfer_threshold"
+      }
+    }
+  },
+  "parameters": {
+    "ces_school": {
+      "name": "ces_school",
+      "in": "path",
+      "description": "ces_school path parameter",
+      "required": true,
+      "type": "string"
+    },
+    "applicant_type": {
+      "name": "applicant_type",
+      "in": "path",
+      "description": "applicant type path parameter",
+      "required": true,
+      "type": "string"
+    },
+    "ces_school_query": {
+      "name": "ces_school",
+      "in": "query",
+      "description": "ces_school query parameter",
+      "required": false,
+      "type": "string"
+    },
+    "applicant_type_query": {
+      "name": "applicant_type",
+      "in": "query",
+      "description": "applicant type query parameter",
+      "required": false,
+      "type": "string"
+    },
+    "active_status_query": {
+      "name": "active_status",
+      "in": "query",
+      "description": "active status query parameter",
+      "required": false,
+      "type": "string"
+    },
+    "page_start": {
+      "name": "page_start",
+      "in": "query",
+      "description": "Skip into a large collection to this item",
+      "required": false,
+      "type": "string"
+    },
+    "page_size": {
+      "name": "page_size",
+      "in": "query",
+      "description": "Return this many items of a large collection",
+      "required": false,
+      "type": "string"
+    }
+  },
+  "responses": {
+    "400": {
+      "description": "Invalid Request - unable to interpret request",
+      "schema": {
+        "$ref": "#/definitions/simple_metadata"
+      }
+    },
+    "401": {
+      "description": "Authentication required to access data",
+      "schema": {
+        "$ref": "#/definitions/simple_metadata"
+      }
+    },
+    "403": {
+      "description": "Access denied to protected data",
+      "schema": {
+        "$ref": "#/definitions/simple_metadata"
+      }
+    },
+    "409": {
+      "description": "Query parameters conflict or are malformed",
+      "schema": {
+        "$ref": "#/definitions/simple_metadata"
+      }
+    },
+    "default": {
+      "description": "Unexpected error",
+      "schema": {
+        "$ref": "#/definitions/simple_metadata"
+      }
+    }
+  },
+  "x-mock_json": {
+    "applicant_types": {
+      "links": {
+        "applicant_types__info": {
+          "rel": "self",
+          "href": "https://api.byu.edu/domains/identity/applicant_types/v1?page_start=51&page_size=50",
+          "method": "GET"
+        },
+        "applicant_types__prev": {
+          "rel": "applicant_types__prev",
+          "href": "https://api.byu.edu/domains/identity/applicant_types/v1?page_start=1&page_size=50",
+          "method": "GET"
+        },
+        "applicant_types__next": {
+          "rel": "applicant_types__next",
+          "href": "https://api.byu.edu/domains/identity/applicant_types/v1?page_start=101&page_size=50",
+          "method": "GET"
+        },
+        "applicant_types__create": {
+          "rel": "applicant_types__create",
+          "href": "https://api.byu.edu/domains/identity/applicant_types/v1",
+          "method": "POST"
+        }
+      },
+      "metadata": {
+        "collection_size": 1,
+        "page_start": 1,
+        "page_end": 1,
+        "page_size": 1,
+        "default_page_size": 50,
+        "max_page_size": 1000,
+        "validation_response": {
+          "code": 200,
+          "message": "Retrieve Successful"
+        },
+        "cache": {
+          "date_time": "2017-06-19T21:00:00.000Z"
+        }
+      },
+      "values": [
+        {
+          "links": {
+            "applicant_types__info": {
+              "rel": "self",
+              "href": "https://api.byu.edu/domains/identity/applicant_types/v1/BYU,NF",
+              "method": "GET"
+            },
+            "applicant_types__modify": {
+              "rel": "applicant_types__modify",
+              "href": "https://api.byu.edu/domains/identity/applicant_types/v1/BYU,NF",
+              "method": "PUT"
+            },
+            "applicant_types__remove": {
+              "rel": "applicant_types__remove",
+              "href": "https://api.byu.edu/domains/identity/applicant_types/v1/BYU,NF",
+              "method": "DELETE"
+            }
+          },
+          "metadata": {
+            "validation_response": {
+              "code": 200,
+              "message": "Successful"
+            },
+            "cache": {
+              "date_time": "2017-06-19T21:00:00.000Z"
+            }
+          },
+          "ces_school": "BYU",
+          "applicant_type": "NF",
+          "description": "New Freshman",
+          "long_description": "New Freshman",
+          "updated_by_id": "INIT",
+          "date_time_updated": "2017-06-19T21:00:00.000Z",
+          "active_status": "yes",
+          "transfer_threshold": "0"
+        }
+      ]
+    },
+    "applicant_type_logs": {
+      "links": {
+        "applicant_type_logs__info": {
+          "rel": "self",
+          "href": "https://api.byu.edu/domains/identity/applicant_types/v1/BYU,FE/logs?page_start=51&page_size=50",
+          "method": "GET"
+        },
+        "applicant_type_logs__prev": {
+          "rel": "applicant_type_logs__prev",
+          "href": "https://api.byu.edu/domains/identity/applicant_types/v1/BYU,FE/logs?page_start=1&page_size=50",
+          "method": "GET"
+        },
+        "applicant_type_logs__next": {
+          "rel": "applicant_type_logs__next",
+          "href": "https://api.byu.edu/domains/identity/applicant_types/v1/BYU,FE/logs?page_start=101&page_size=50",
+          "method": "GET"
+        }
+      },
+      "metadata": {
+        "collection_size": 1,
+        "page_start": 1,
+        "page_end": 1,
+        "page_size": 1,
+        "default_page_size": 50,
+        "max_page_size": 1000,
+        "validation_response": {
+          "code": 200,
+          "message": "Successful"
+        },
+        "cache": {
+          "date_time": "2017-06-19T21:00:00.000Z"
+        }
+      },
+      "values": [
+        {
+          "metadata": {
+            "validation_response": {
+              "code": 200,
+              "message": "Successful"
+            },
+            "cache": {
+              "date_time": "2017-06-19T21:00:00.000Z"
+            }
+          },
+          "log_action": "applicant_types__create",
+          "ces_school": "BYU",
+          "applicant_type": "NF",
+          "description": "New Freshman",
+          "long_description": "New Freshman",
+          "updated_by_id": "INIT",
+          "date_time_updated": "2017-06-19T21:00:00.000Z",
+          "active_status": "yes",
+          "transfer_threshold": "0"
+        }
+      ]
+    },
+    "applicant_type_new": {
+      "ces_school": "BYU",
+      "applicant_type": "NF",
+      "description": "New Freshman",
+      "long_description": "New Freshman",
+      "updated_by_id": "INIT",
+      "active_status": "yes",
+      "transfer_threshold": "0"
+    }
+  }
+}
