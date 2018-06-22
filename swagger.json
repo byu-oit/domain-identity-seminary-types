@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "admissionsSeminaryType",
-    "description": "==> Place your description here",
+    "description": "Seminary Types for CES School Admission Application",
     "version": "v1",
     "license": {
       "name": "Apache 2.0",
@@ -21,7 +21,7 @@
     "/": {
       "x-controller": "seminary_types",
       "get": {
-        "summary": "admissions Codes",
+        "summary": "Get all Seminary Types",
         "description": "Retrieve a collection of seminary_types",
         "operationId": "getSeminaryTypes",
         "parameters": [
@@ -663,6 +663,7 @@
       }
     },
     "error_response": {
+      "description": "Error body",
       "type": "object",
       "required": ["metadata"],
       "properties": {
