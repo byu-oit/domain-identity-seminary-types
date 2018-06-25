@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "value": "EM",
+      "description": "Early Morning",
+      "long-description": "Early Morning",
+      "active_status": "Y",
+      "updated_by_id": "",
+      "date_time_updated": ""
+    },
+    {
+      "value": "HS",
+      "description": "Home Study",
+      "long-description": "Home Study",
+      "active_status": "Y",
+      "updated_by_id": "",
+      "date_time_updated": ""
+    },
+    {
+      "value": "ON",
+      "description": "Online",
+      "long-description": "Online",
+      "active_status": "Y",
+      "updated_by_id": "",
+      "date_time_updated": ""
+    },
+    {
+      "value": "RT",
+      "description": "Release Time",
+      "long-description": "Release Time",
+      "active_status": "Y",
+      "updated_by_id": "",
+      "date_time_updated": ""
+    }
+  ]
+}

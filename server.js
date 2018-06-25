@@ -16,9 +16,10 @@
  **/
 'use strict';
 const path              = require('path');
-const api               = require('node-byuapi-framework');
+const api               = require('./api');
 const express           = require('express');
 const bodyParser        = require('body-parser');
+const expressTranslator = require('sans-server-express');
 // ----- Set up the Express server -----
 const app = express();
 
@@ -27,13 +28,14 @@ app.get('/xhealth', (req, res) => {
 });
 
 app.use(bodyParser.json());
-app.use(api.express({
+/*app.use(api.express({
   controllers: path.resolve(__dirname, './controllers'),
   swagger: path.resolve(__dirname, './swagger.json'),
   ignoreBasePath: false,
   validateExamples: true,
   development: true
-}));
+}));*/
+app.use(expressTranslator(api));
 let port = process.env.PORT || 8081;
 app.listen(port, function () {
   console.log("Beginning server");
@@ -41,3 +43,5 @@ app.listen(port, function () {
   console.log("    [INFO] Controller path = " + path.resolve(__dirname, './controllers'));
   console.log("    [INFO] Swagger path = " + path.resolve(__dirname, './swagger.json'));
 });
+
+
