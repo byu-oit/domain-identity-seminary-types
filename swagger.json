@@ -981,8 +981,8 @@
     },
     "seminary_type_new": {
       "seminary_type": "EM",
-      "description": "EM",
-      "long_description": "EM",
+      "description": "Early Morning",
+      "long_description": "Early Morning",
       "active_status": "Y"
     }
   }

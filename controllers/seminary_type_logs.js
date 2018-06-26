@@ -24,5 +24,5 @@ exports.getSeminaryTypeLogs = function (req, res) {
 
 exports.getSeminaryTypeLogs.mock = function (req, res) {
   console.log("Invoked getSeminaryTypeLogs.mock")
-  res.send(req.swagger['x-mock_json'].seminary_type_logs);
+  res.send(req.swagger.root['x-mock_json'].seminary_type_logs);
 };

@@ -24,7 +24,7 @@ exports.getSeminaryType = function (req, res) {
 
 exports.getSeminaryType.mock = function (req, res) {
   console.log("Invoked getSeminaryType.mock")
-  res.send(req.swagger['x-mock_json'].seminary_types.values[0]);
+  res.send(req.swagger.root['x-mock_json'].seminary_types.values[0]);
 };
 
 exports.modifySeminaryType = function (req, res) {
@@ -34,7 +34,7 @@ exports.modifySeminaryType = function (req, res) {
 
 exports.modifySeminaryType.mock = function (req, res) {
   console.log("Invoked modifySeminaryType.mock")
-  res.send(req.swagger['x-mock_json'].seminary_types.values[0]);
+  res.send(req.swagger.root['x-mock_json'].seminary_types.values[0]);
 };
 
 exports.removeSeminaryType = function (req, res) {

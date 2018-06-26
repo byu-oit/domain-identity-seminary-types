@@ -34,5 +34,5 @@ exports.createSeminaryType = function (req, res) {
 
 exports.createSeminaryType.mock = function (req, res) {
   console.log("Invoked createSeminaryType.mock")
-  res.status(201).send(req.swagger['x-mock_json'].seminary_types.values[0]);
+  res.status(201).send(req.swagger.root['x-mock_json'].seminary_types.values[0]);
 };
