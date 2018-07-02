@@ -15,12 +15,9 @@
  *
  */
 'use strict';
-
+const controllers = require('identity-code-api-controllers');
 // ----- Exported Endpoint Handlers -----
-exports.getSeminaryTypeLogs = function (req, res) {
-  console.log("Invoked getSeminaryTypeLogs")
-  exports.getSeminaryTypeLogs.mock(req, res);
-};
+exports.getSeminaryTypeLogs = controllers.getResourceLogs;
 
 exports.getSeminaryTypeLogs.mock = function (req, res) {
   console.log("Invoked getSeminaryTypeLogs.mock")

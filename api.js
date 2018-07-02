@@ -10,22 +10,23 @@ const meta = require('meta-ngin');
 const security = require('identity-codes-security');
 const controllers = require('identity-code-api-controllers');
 const WELLKNOWN_URL = 'https://api.byu.edu/.well-known/openid-configuration';
+//const auth = require('./auth');
 
 let clientKey;
 let clientSecret;
 let oauth_set = false;
 
 controllers.init({
-    bucketName: 'identity-relationship-types-dev-bucket-s3',
-    storageFile: 'relationship_types.json',
-    logFile: 'relationship_type_logs.json',
-    resourceNameSingular: 'relationship_type',
-    resourceNamePlural: 'relationship_types',
-    //raiseEvents: true
+    bucketName: 'identity-seminary-types-dev-bucket-s3',
+    storageFile: 'seminary-types.json',
+    logFile: 'seminary-types-logs.json',
+    resourceNameSingular: 'seminary_type',
+    resourceNamePlural: 'seminary_types',
+    raiseEvents: true
 });
 
-/*
-handelUtils.fetchParameters(AWS, [`clientKey`, `clientSecret`])
+
+handelUtils.  fetchParameters(AWS, [`clientKey`, `clientSecret`])
     .then(params => {
         if (typeof params.clientKey !== 'string') throw new Error('Could not obtain clientKey from Parameter Store!');
         if (typeof params.clientSecret !== 'string') throw new Error('Could not obtain clientSecret from Parameter Store');
@@ -42,7 +43,7 @@ handelUtils.fetchParameters(AWS, [`clientKey`, `clientSecret`])
         setup_error = err.message;
         console.error('    [ERROR] Failed to retrieved Parameter Store variables:', err.message);
     });
-*/
+
 
 const api = SansServer();
 module.exports = api;
@@ -71,12 +72,15 @@ api.use((req, res, next) => {
 security({
     server: api,
     wso2_request_instance: wso2,
-    code_api_name: 'domain-identity-relationship_types',
+    code_api_name: 'domain-identity-seminary_types',
 });
 
 api.use(SansServerSwagger({
     controllers: './controllers',
     development: true,
     swagger: './swagger.json',
-    ignoreBasePath: false
+    ignoreBasePath: false,
+    exception: function (res, state) {
+        res.body(meta(state.statusCode, state.body));
+    }
 }));

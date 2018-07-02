@@ -2019,6 +2019,13 @@
                 "active_status":"Y"
               }
             }
+          },
+          {
+            "name":"seminary_type",
+            "in":"path",
+            "description":"seminary_type path parameter",
+            "required":true,
+            "type":"string"
           }
         ],
         "tags":[
@@ -2582,6 +2589,15 @@
         "summary":"admissions Codes",
         "description":"Removes a seminary_type",
         "operationId":"removeSeminaryType",
+        "parameters":[
+          {
+            "name":"seminary_type",
+            "in":"path",
+            "description":"seminary_type path parameter",
+            "required":true,
+            "type":"string"
+          }
+        ],
         "tags":[
           "admissions",
           "Codes"

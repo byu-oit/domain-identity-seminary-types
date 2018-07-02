@@ -1,0 +1,36 @@
+{
+  "seminary_types_logs": [
+    {
+      "log_action": "seminary_types_create",
+      "type": "EM",
+      "description": "Early Morning",
+      "active_status": "Y",
+      "updated_by_id": "",
+      "date_time_updated": ""
+    }
+    {
+      "log_action": "seminary_types_create",
+      "type": "HS",
+      "description": "Home Study",
+      "active_status": "Y",
+      "updated_by_id": "",
+      "date_time_updated": ""
+    }
+    {
+      "log_action": "seminary_types_create",
+      "type": "ON",
+      "description": "Online",
+      "active_status": "Y",
+      "updated_by_id": "",
+      "date_time_updated": ""
+    }
+    {
+      "log_action": "seminary_types_create",
+      "type": "RT",
+      "description": "Release Time",
+      "active_status": "Y",
+      "updated_by_id": "",
+      "date_time_updated": ""
+    }
+  ]
+}

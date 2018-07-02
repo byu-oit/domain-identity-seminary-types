@@ -15,22 +15,16 @@
  *
  */
 'use strict';
-
+const controllers = require('identity-code-api-controllers');
 // ----- Exported Endpoint Handlers -----
-exports.getSeminaryTypes = function (req, res) {
-  console.log("Invoked getSeminaryTypes")
-  exports.getSeminaryTypes.mock(req, res);
-};
+exports.getSeminaryTypes = controllers.getAllResources;
 
 exports.getSeminaryTypes.mock = function (req, res) {
   console.log("Invoked getSeminaryTypes.mock")
   res.send(req.swagger.root['x-mock_json'].seminary_types);
 };
 
-exports.createSeminaryType = function (req, res) {
-  console.log("Invoked createSeminaryType")
-  exports.createSeminaryType.mock(req, res);
-};
+exports.createSeminaryType = controllers.createResource;
 
 exports.createSeminaryType.mock = function (req, res) {
   console.log("Invoked createSeminaryType.mock")
