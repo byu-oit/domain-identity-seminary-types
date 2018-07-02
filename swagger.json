@@ -633,9 +633,6 @@
       "description": "Change Log for seminary_type API",
       "type": "object",
       "properties": {
-        "log_id": {
-          "$ref": "#/definitions/log_id"
-        },
         "log_action": {
           "$ref": "#/definitions/log_action"
         },
@@ -776,16 +773,11 @@
       "description": "What function was performed on the seminary_type",
       "type": "string",
       "enum": [
-        "seminary_types__create",
-        "seminary_types__modify",
-        "seminary_types__remove"
+        "seminary_type__create",
+        "seminary_type__modify",
+        "seminary_type__remove"
       ],
       "example": { "$ref": "#/x-mock_json/seminary_type_logs/values/0/log_action" }
-    },
-    "log_id": {
-      "description": "Unique identifier assigned to each log record",
-      "type": "string",
-      "example": { "$ref": "#/x-mock_json/seminary_type_logs/values/0/log_id" }
     },
     "long_description": {
       "description": "seminary_type Long Description",
@@ -898,32 +890,6 @@
       },
       "values": [
         {
-          "links": {
-            "seminary_types__info": {
-              "rel": "self",
-              "href": "https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-              "method": "GET"
-            },
-            "seminary_types__modify": {
-              "rel": "seminary_types__modify",
-              "href": "https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-              "method": "PUT"
-            },
-            "seminary_types__remove": {
-              "rel": "seminary_types__remove",
-              "href": "https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-              "method": "DELETE"
-            }
-          },
-          "metadata": {
-            "cache": {
-              "date_time": "2014-05-11T13:45:53.200Z"
-            },
-            "validation_response": {
-              "code": 200,
-              "message": "Successful"
-            }
-          },
           "seminary_type": "EM",
           "description": "EM",
           "long_description": "EM",
@@ -968,11 +934,10 @@
       },
       "values": [
         {
-          "log_id": "4128395402",
           "log_action": "seminary_types__create",
           "seminary_type": "EM",
-          "description": "EM",
-          "long_description": "EM",
+          "description": "Early Morning",
+          "long_description": "Early Morning",
           "active_status": "Y",
           "updated_by_id": "111111111",
           "date_time_updated": "2014-05-11T13:45:53.200Z"

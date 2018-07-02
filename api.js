@@ -17,7 +17,7 @@ let clientSecret;
 let oauth_set = false;
 
 controllers.init({
-    bucketName: 'identity-seminary-types-dev-bucket-s3',
+    bucketName: 'domain-identity-seminary-types-dev-bucket-s3',
     storageFile: 'seminary-types.json',
     logFile: 'seminary-types-logs.json',
     resourceNameSingular: 'seminary_type',

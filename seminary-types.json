@@ -1,33 +1,33 @@
 {
-  "values": [
+  "seminary_types": [
     {
-      "value": "EM",
+      "seminary_type": "EM",
       "description": "Early Morning",
-      "long-description": "Early Morning",
+      "long_description": "Early Morning",
       "active_status": "Y",
       "updated_by_id": "",
       "date_time_updated": ""
     },
     {
-      "value": "HS",
+      "seminary_type": "HS",
       "description": "Home Study",
-      "long-description": "Home Study",
+      "long_description": "Home Study",
       "active_status": "Y",
       "updated_by_id": "",
       "date_time_updated": ""
     },
     {
-      "value": "ON",
+      "seminary_type": "ON",
       "description": "Online",
-      "long-description": "Online",
+      "long_description": "Online",
       "active_status": "Y",
       "updated_by_id": "",
       "date_time_updated": ""
     },
     {
-      "value": "RT",
+      "seminary_type": "RT",
       "description": "Release Time",
-      "long-description": "Release Time",
+      "long_description": "Release Time",
       "active_status": "Y",
       "updated_by_id": "",
       "date_time_updated": ""

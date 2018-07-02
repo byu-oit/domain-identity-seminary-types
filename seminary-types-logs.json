@@ -1,33 +1,37 @@
 {
-  "seminary_types_logs": [
+  "seminary_type_logs": [
     {
-      "log_action": "seminary_types_create",
-      "type": "EM",
+      "log_action": "seminary_type__create",
+      "seminary_type": "EM",
       "description": "Early Morning",
+      "long_description": "Early Morning",
       "active_status": "Y",
       "updated_by_id": "",
       "date_time_updated": ""
-    }
+    },
     {
-      "log_action": "seminary_types_create",
-      "type": "HS",
+      "log_action": "seminary_type__create",
+      "seminary_type": "HS",
       "description": "Home Study",
+      "long_description": "Home Study",
       "active_status": "Y",
       "updated_by_id": "",
       "date_time_updated": ""
-    }
+    },
     {
-      "log_action": "seminary_types_create",
-      "type": "ON",
+      "log_action": "seminary_type__create",
+      "seminary_type": "ON",
       "description": "Online",
+      "long_description": "Online",
       "active_status": "Y",
       "updated_by_id": "",
       "date_time_updated": ""
-    }
+    },
     {
-      "log_action": "seminary_types_create",
-      "type": "RT",
+      "log_action": "seminary_type__create",
+      "seminary_type": "RT",
       "description": "Release Time",
+      "long_description": "Release Time",
       "active_status": "Y",
       "updated_by_id": "",
       "date_time_updated": ""
