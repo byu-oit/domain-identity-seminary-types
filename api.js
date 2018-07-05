@@ -9,12 +9,14 @@ const handelUtils = require('handel-utils');
 const meta = require('meta-ngin');
 const security = require('identity-codes-security');
 const controllers = require('identity-code-api-controllers');
+const config = controllers.retrieve;
 const WELLKNOWN_URL = 'https://api.byu.edu/.well-known/openid-configuration';
 //const auth = require('./auth');
 
 let clientKey;
 let clientSecret;
 let oauth_set = false;
+let setup_error = '';
 
 controllers.init({
     bucketName: 'domain-identity-seminary-types-dev-bucket-s3',
@@ -48,7 +50,7 @@ const api = SansServer();
 module.exports = api;
 
 api.use((req, res, next) => {
-    if (!oauth_set) res.status(503).send(meta(503));
+    if (!oauth_set) res.status(503).send(meta(503, setup_error));
     else next();
 });
 
@@ -77,7 +79,7 @@ api.use(SansServerSwagger({
     controllers: './controllers',
     development: true,
     swagger: './swagger.json',
-    ignoreBasePath: false,
+    //ignoreBasePath: false,
     exception: function (res, state) {
         res.body(meta(state.statusCode, state.body));
     }
