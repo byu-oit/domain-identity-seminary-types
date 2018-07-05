@@ -26,7 +26,7 @@ controllers.init({
 });
 
 
-handelUtils.  fetchParameters(AWS, [`clientKey`, `clientSecret`])
+handelUtils.fetchParameters(AWS, [`clientKey`, `clientSecret`])
     .then(params => {
         if (typeof params.clientKey !== 'string') throw new Error('Could not obtain clientKey from Parameter Store!');
         if (typeof params.clientSecret !== 'string') throw new Error('Could not obtain clientSecret from Parameter Store');
@@ -49,9 +49,8 @@ const api = SansServer();
 module.exports = api;
 
 api.use((req, res, next) => {
-    /*if (!oauth_set) res.status(503).send(meta(503));
-    else next();*/
-    next();
+    if (!oauth_set) res.status(503).send(meta(503));
+    else next();
 });
 
 api.use((req, res, next) => {
