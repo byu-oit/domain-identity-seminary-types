@@ -407,32 +407,6 @@
                       }
                     },
                     "example":{
-                      "links":{
-                        "seminary_types__info":{
-                          "rel":"self",
-                          "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                          "method":"GET"
-                        },
-                        "seminary_types__modify":{
-                          "rel":"seminary_types__modify",
-                          "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                          "method":"PUT"
-                        },
-                        "seminary_types__remove":{
-                          "rel":"seminary_types__remove",
-                          "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                          "method":"DELETE"
-                        }
-                      },
-                      "metadata":{
-                        "cache":{
-                          "date_time":"2014-05-11T13:45:53.200Z"
-                        },
-                        "validation_response":{
-                          "code":200,
-                          "message":"Successful"
-                        }
-                      },
                       "seminary_type":"EM",
                       "description":"EM",
                       "long_description":"EM",
@@ -483,32 +457,6 @@
                 },
                 "values":[
                   {
-                    "links":{
-                      "seminary_types__info":{
-                        "rel":"self",
-                        "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                        "method":"GET"
-                      },
-                      "seminary_types__modify":{
-                        "rel":"seminary_types__modify",
-                        "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                        "method":"PUT"
-                      },
-                      "seminary_types__remove":{
-                        "rel":"seminary_types__remove",
-                        "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                        "method":"DELETE"
-                      }
-                    },
-                    "metadata":{
-                      "cache":{
-                        "date_time":"2014-05-11T13:45:53.200Z"
-                      },
-                      "validation_response":{
-                        "code":200,
-                        "message":"Successful"
-                      }
-                    },
                     "seminary_type":"EM",
                     "description":"EM",
                     "long_description":"EM",
@@ -560,32 +508,6 @@
                 },
                 "values":[
                   {
-                    "links":{
-                      "seminary_types__info":{
-                        "rel":"self",
-                        "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                        "method":"GET"
-                      },
-                      "seminary_types__modify":{
-                        "rel":"seminary_types__modify",
-                        "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                        "method":"PUT"
-                      },
-                      "seminary_types__remove":{
-                        "rel":"seminary_types__remove",
-                        "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                        "method":"DELETE"
-                      }
-                    },
-                    "metadata":{
-                      "cache":{
-                        "date_time":"2014-05-11T13:45:53.200Z"
-                      },
-                      "validation_response":{
-                        "code":200,
-                        "message":"Successful"
-                      }
-                    },
                     "seminary_type":"EM",
                     "description":"EM",
                     "long_description":"EM",
@@ -891,8 +813,8 @@
               },
               "example":{
                 "seminary_type":"EM",
-                "description":"EM",
-                "long_description":"EM",
+                "description":"Early Morning",
+                "long_description":"Early Morning",
                 "active_status":"Y"
               }
             }
@@ -1076,32 +998,6 @@
                 }
               },
               "example":{
-                "links":{
-                  "seminary_types__info":{
-                    "rel":"self",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"GET"
-                  },
-                  "seminary_types__modify":{
-                    "rel":"seminary_types__modify",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"PUT"
-                  },
-                  "seminary_types__remove":{
-                    "rel":"seminary_types__remove",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"DELETE"
-                  }
-                },
-                "metadata":{
-                  "cache":{
-                    "date_time":"2014-05-11T13:45:53.200Z"
-                  },
-                  "validation_response":{
-                    "code":200,
-                    "message":"Successful"
-                  }
-                },
                 "seminary_type":"EM",
                 "description":"EM",
                 "long_description":"EM",
@@ -1112,32 +1008,6 @@
             },
             "examples":{
               "application/json":{
-                "links":{
-                  "seminary_types__info":{
-                    "rel":"self",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"GET"
-                  },
-                  "seminary_types__modify":{
-                    "rel":"seminary_types__modify",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"PUT"
-                  },
-                  "seminary_types__remove":{
-                    "rel":"seminary_types__remove",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"DELETE"
-                  }
-                },
-                "metadata":{
-                  "cache":{
-                    "date_time":"2014-05-11T13:45:53.200Z"
-                  },
-                  "validation_response":{
-                    "code":200,
-                    "message":"Successful"
-                  }
-                },
                 "seminary_type":"EM",
                 "description":"EM",
                 "long_description":"EM",
@@ -1407,19 +1277,19 @@
     },
     "/{seminary_type}":{
       "x-controller":"seminary_type",
+      "parameters":[
+        {
+          "name":"seminary_type",
+          "in":"path",
+          "description":"seminary_type path parameter",
+          "required":true,
+          "type":"string"
+        }
+      ],
       "get":{
         "summary":"admissions Codes",
         "description":"Retrieve a specific seminary_type",
         "operationId":"getSeminaryType",
-        "parameters":[
-          {
-            "name":"seminary_type",
-            "in":"path",
-            "description":"seminary_type path parameter",
-            "required":true,
-            "type":"string"
-          }
-        ],
         "tags":[
           "admissions",
           "Codes"
@@ -1598,32 +1468,6 @@
                 }
               },
               "example":{
-                "links":{
-                  "seminary_types__info":{
-                    "rel":"self",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"GET"
-                  },
-                  "seminary_types__modify":{
-                    "rel":"seminary_types__modify",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"PUT"
-                  },
-                  "seminary_types__remove":{
-                    "rel":"seminary_types__remove",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"DELETE"
-                  }
-                },
-                "metadata":{
-                  "cache":{
-                    "date_time":"2014-05-11T13:45:53.200Z"
-                  },
-                  "validation_response":{
-                    "code":200,
-                    "message":"Successful"
-                  }
-                },
                 "seminary_type":"EM",
                 "description":"EM",
                 "long_description":"EM",
@@ -1634,32 +1478,6 @@
             },
             "examples":{
               "application/json":{
-                "links":{
-                  "seminary_types__info":{
-                    "rel":"self",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"GET"
-                  },
-                  "seminary_types__modify":{
-                    "rel":"seminary_types__modify",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"PUT"
-                  },
-                  "seminary_types__remove":{
-                    "rel":"seminary_types__remove",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"DELETE"
-                  }
-                },
-                "metadata":{
-                  "cache":{
-                    "date_time":"2014-05-11T13:45:53.200Z"
-                  },
-                  "validation_response":{
-                    "code":200,
-                    "message":"Successful"
-                  }
-                },
                 "seminary_type":"EM",
                 "description":"EM",
                 "long_description":"EM",
@@ -2014,18 +1832,11 @@
               },
               "example":{
                 "seminary_type":"EM",
-                "description":"EM",
-                "long_description":"EM",
+                "description":"Early Morning",
+                "long_description":"Early Morning",
                 "active_status":"Y"
               }
             }
-          },
-          {
-            "name":"seminary_type",
-            "in":"path",
-            "description":"seminary_type path parameter",
-            "required":true,
-            "type":"string"
           }
         ],
         "tags":[
@@ -2206,32 +2017,6 @@
                 }
               },
               "example":{
-                "links":{
-                  "seminary_types__info":{
-                    "rel":"self",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"GET"
-                  },
-                  "seminary_types__modify":{
-                    "rel":"seminary_types__modify",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"PUT"
-                  },
-                  "seminary_types__remove":{
-                    "rel":"seminary_types__remove",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"DELETE"
-                  }
-                },
-                "metadata":{
-                  "cache":{
-                    "date_time":"2014-05-11T13:45:53.200Z"
-                  },
-                  "validation_response":{
-                    "code":200,
-                    "message":"Successful"
-                  }
-                },
                 "seminary_type":"EM",
                 "description":"EM",
                 "long_description":"EM",
@@ -2242,32 +2027,6 @@
             },
             "examples":{
               "application/json":{
-                "links":{
-                  "seminary_types__info":{
-                    "rel":"self",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"GET"
-                  },
-                  "seminary_types__modify":{
-                    "rel":"seminary_types__modify",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"PUT"
-                  },
-                  "seminary_types__remove":{
-                    "rel":"seminary_types__remove",
-                    "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                    "method":"DELETE"
-                  }
-                },
-                "metadata":{
-                  "cache":{
-                    "date_time":"2014-05-11T13:45:53.200Z"
-                  },
-                  "validation_response":{
-                    "code":200,
-                    "message":"Successful"
-                  }
-                },
                 "seminary_type":"EM",
                 "description":"EM",
                 "long_description":"EM",
@@ -2589,15 +2348,6 @@
         "summary":"admissions Codes",
         "description":"Removes a seminary_type",
         "operationId":"removeSeminaryType",
-        "parameters":[
-          {
-            "name":"seminary_type",
-            "in":"path",
-            "description":"seminary_type path parameter",
-            "required":true,
-            "type":"string"
-          }
-        ],
         "tags":[
           "admissions",
           "Codes"
@@ -2815,19 +2565,19 @@
     },
     "/{seminary_type}/logs":{
       "x-controller":"seminary_type_logs",
+      "parameters":[
+        {
+          "name":"seminary_type",
+          "in":"path",
+          "description":"seminary_type path parameter",
+          "required":true,
+          "type":"string"
+        }
+      ],
       "get":{
         "summary":"admissions Codes Archive",
         "description":"Retrieve the collection of logs for a seminary_type",
         "operationId":"getSeminaryTypeLogs",
-        "parameters":[
-          {
-            "name":"seminary_type",
-            "in":"path",
-            "description":"seminary_type path parameter",
-            "required":true,
-            "type":"string"
-          }
-        ],
         "tags":[
           "admissions",
           "Codes"
@@ -2994,18 +2744,13 @@
                     "description":"Change Log for seminary_type API",
                     "type":"object",
                     "properties":{
-                      "log_id":{
-                        "description":"Unique identifier assigned to each log record",
-                        "type":"string",
-                        "example":"4128395402"
-                      },
                       "log_action":{
                         "description":"What function was performed on the seminary_type",
                         "type":"string",
                         "enum":[
-                          "seminary_types__create",
-                          "seminary_types__modify",
-                          "seminary_types__remove"
+                          "seminary_type__create",
+                          "seminary_type__modify",
+                          "seminary_type__remove"
                         ],
                         "example":"seminary_types__create"
                       },
@@ -3041,11 +2786,10 @@
                       }
                     },
                     "example":{
-                      "log_id":"4128395402",
                       "log_action":"seminary_types__create",
                       "seminary_type":"EM",
-                      "description":"EM",
-                      "long_description":"EM",
+                      "description":"Early Morning",
+                      "long_description":"Early Morning",
                       "active_status":"Y",
                       "updated_by_id":"111111111",
                       "date_time_updated":"2014-05-11T13:45:53.200Z"
@@ -3088,11 +2832,10 @@
                 },
                 "values":[
                   {
-                    "log_id":"4128395402",
                     "log_action":"seminary_types__create",
                     "seminary_type":"EM",
-                    "description":"EM",
-                    "long_description":"EM",
+                    "description":"Early Morning",
+                    "long_description":"Early Morning",
                     "active_status":"Y",
                     "updated_by_id":"111111111",
                     "date_time_updated":"2014-05-11T13:45:53.200Z"
@@ -3136,11 +2879,10 @@
                 },
                 "values":[
                   {
-                    "log_id":"4128395402",
                     "log_action":"seminary_types__create",
                     "seminary_type":"EM",
-                    "description":"EM",
-                    "long_description":"EM",
+                    "description":"Early Morning",
+                    "long_description":"Early Morning",
                     "active_status":"Y",
                     "updated_by_id":"111111111",
                     "date_time_updated":"2014-05-11T13:45:53.200Z"
@@ -3813,32 +3555,6 @@
               }
             },
             "example":{
-              "links":{
-                "seminary_types__info":{
-                  "rel":"self",
-                  "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                  "method":"GET"
-                },
-                "seminary_types__modify":{
-                  "rel":"seminary_types__modify",
-                  "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                  "method":"PUT"
-                },
-                "seminary_types__remove":{
-                  "rel":"seminary_types__remove",
-                  "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                  "method":"DELETE"
-                }
-              },
-              "metadata":{
-                "cache":{
-                  "date_time":"2014-05-11T13:45:53.200Z"
-                },
-                "validation_response":{
-                  "code":200,
-                  "message":"Successful"
-                }
-              },
               "seminary_type":"EM",
               "description":"EM",
               "long_description":"EM",
@@ -3889,32 +3605,6 @@
         },
         "values":[
           {
-            "links":{
-              "seminary_types__info":{
-                "rel":"self",
-                "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                "method":"GET"
-              },
-              "seminary_types__modify":{
-                "rel":"seminary_types__modify",
-                "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                "method":"PUT"
-              },
-              "seminary_types__remove":{
-                "rel":"seminary_types__remove",
-                "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-                "method":"DELETE"
-              }
-            },
-            "metadata":{
-              "cache":{
-                "date_time":"2014-05-11T13:45:53.200Z"
-              },
-              "validation_response":{
-                "code":200,
-                "message":"Successful"
-              }
-            },
             "seminary_type":"EM",
             "description":"EM",
             "long_description":"EM",
@@ -4096,32 +3786,6 @@
         }
       },
       "example":{
-        "links":{
-          "seminary_types__info":{
-            "rel":"self",
-            "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-            "method":"GET"
-          },
-          "seminary_types__modify":{
-            "rel":"seminary_types__modify",
-            "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-            "method":"PUT"
-          },
-          "seminary_types__remove":{
-            "rel":"seminary_types__remove",
-            "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-            "method":"DELETE"
-          }
-        },
-        "metadata":{
-          "cache":{
-            "date_time":"2014-05-11T13:45:53.200Z"
-          },
-          "validation_response":{
-            "code":200,
-            "message":"Successful"
-          }
-        },
         "seminary_type":"EM",
         "description":"EM",
         "long_description":"EM",
@@ -4157,8 +3821,8 @@
       },
       "example":{
         "seminary_type":"EM",
-        "description":"EM",
-        "long_description":"EM",
+        "description":"Early Morning",
+        "long_description":"Early Morning",
         "active_status":"Y"
       }
     },
@@ -4321,18 +3985,13 @@
             "description":"Change Log for seminary_type API",
             "type":"object",
             "properties":{
-              "log_id":{
-                "description":"Unique identifier assigned to each log record",
-                "type":"string",
-                "example":"4128395402"
-              },
               "log_action":{
                 "description":"What function was performed on the seminary_type",
                 "type":"string",
                 "enum":[
-                  "seminary_types__create",
-                  "seminary_types__modify",
-                  "seminary_types__remove"
+                  "seminary_type__create",
+                  "seminary_type__modify",
+                  "seminary_type__remove"
                 ],
                 "example":"seminary_types__create"
               },
@@ -4368,11 +4027,10 @@
               }
             },
             "example":{
-              "log_id":"4128395402",
               "log_action":"seminary_types__create",
               "seminary_type":"EM",
-              "description":"EM",
-              "long_description":"EM",
+              "description":"Early Morning",
+              "long_description":"Early Morning",
               "active_status":"Y",
               "updated_by_id":"111111111",
               "date_time_updated":"2014-05-11T13:45:53.200Z"
@@ -4415,11 +4073,10 @@
         },
         "values":[
           {
-            "log_id":"4128395402",
             "log_action":"seminary_types__create",
             "seminary_type":"EM",
-            "description":"EM",
-            "long_description":"EM",
+            "description":"Early Morning",
+            "long_description":"Early Morning",
             "active_status":"Y",
             "updated_by_id":"111111111",
             "date_time_updated":"2014-05-11T13:45:53.200Z"
@@ -4431,18 +4088,13 @@
       "description":"Change Log for seminary_type API",
       "type":"object",
       "properties":{
-        "log_id":{
-          "description":"Unique identifier assigned to each log record",
-          "type":"string",
-          "example":"4128395402"
-        },
         "log_action":{
           "description":"What function was performed on the seminary_type",
           "type":"string",
           "enum":[
-            "seminary_types__create",
-            "seminary_types__modify",
-            "seminary_types__remove"
+            "seminary_type__create",
+            "seminary_type__modify",
+            "seminary_type__remove"
           ],
           "example":"seminary_types__create"
         },
@@ -4478,11 +4130,10 @@
         }
       },
       "example":{
-        "log_id":"4128395402",
         "log_action":"seminary_types__create",
         "seminary_type":"EM",
-        "description":"EM",
-        "long_description":"EM",
+        "description":"Early Morning",
+        "long_description":"Early Morning",
         "active_status":"Y",
         "updated_by_id":"111111111",
         "date_time_updated":"2014-05-11T13:45:53.200Z"
@@ -4670,16 +4321,11 @@
       "description":"What function was performed on the seminary_type",
       "type":"string",
       "enum":[
-        "seminary_types__create",
-        "seminary_types__modify",
-        "seminary_types__remove"
+        "seminary_type__create",
+        "seminary_type__modify",
+        "seminary_type__remove"
       ],
       "example":"seminary_types__create"
-    },
-    "log_id":{
-      "description":"Unique identifier assigned to each log record",
-      "type":"string",
-      "example":"4128395402"
     },
     "long_description":{
       "description":"seminary_type Long Description",
@@ -5013,32 +4659,6 @@
       },
       "values":[
         {
-          "links":{
-            "seminary_types__info":{
-              "rel":"self",
-              "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-              "method":"GET"
-            },
-            "seminary_types__modify":{
-              "rel":"seminary_types__modify",
-              "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-              "method":"PUT"
-            },
-            "seminary_types__remove":{
-              "rel":"seminary_types__remove",
-              "href":"https://api.byu.edu/domains/admissions/seminary_types/v1/EM",
-              "method":"DELETE"
-            }
-          },
-          "metadata":{
-            "cache":{
-              "date_time":"2014-05-11T13:45:53.200Z"
-            },
-            "validation_response":{
-              "code":200,
-              "message":"Successful"
-            }
-          },
           "seminary_type":"EM",
           "description":"EM",
           "long_description":"EM",
@@ -5083,11 +4703,10 @@
       },
       "values":[
         {
-          "log_id":"4128395402",
           "log_action":"seminary_types__create",
           "seminary_type":"EM",
-          "description":"EM",
-          "long_description":"EM",
+          "description":"Early Morning",
+          "long_description":"Early Morning",
           "active_status":"Y",
           "updated_by_id":"111111111",
           "date_time_updated":"2014-05-11T13:45:53.200Z"
@@ -5096,8 +4715,8 @@
     },
     "seminary_type_new":{
       "seminary_type":"EM",
-      "description":"EM",
-      "long_description":"EM",
+      "description":"Early Morning",
+      "long_description":"Early Morning",
       "active_status":"Y"
     }
   }
