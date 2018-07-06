@@ -34,8 +34,8 @@
     "selective-middleware": "0.0.3"
   },
   "devDependencies": {
+    "@byu-oit/byuapi": "0.0.10",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0",
-    "@byu-oit/byuapi": "0.0.10"
+    "mocha": "^5.2.0"
   }
 }
