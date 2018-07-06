@@ -12,7 +12,7 @@ pipelines:
       branch: master
     - type: codebuild
       name: Build
-      build_image: aws/codebuild/nodejs:8.11.3
+      build_image: aws/codebuild/nodejs:8.11.0
     - type: handel
       name: Deploy
       environments_to_deploy:
