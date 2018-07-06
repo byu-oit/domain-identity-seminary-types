@@ -19,7 +19,7 @@ let oauth_set = false;
 let setup_error = '';
 
 controllers.init({
-    bucketName: 'domain-identity-seminary-types-dev-bucket-s3',
+    bucketName: 'identity-seminary-types-dev-bucket-s3',
     storageFile: 'seminary-types.json',
     logFile: 'seminary-types-logs.json',
     resourceNameSingular: 'seminary_type',

@@ -1,6 +1,6 @@
 version: 1
 
-name: domain-identity-seminary-types
+name: identity-seminary-types
 
 pipelines:
   dev:
@@ -9,7 +9,7 @@ pipelines:
       name: GitHub
       owner: byu-oit
       repo: domain-identity-seminary-types
-      branch: origin/master
+      branch: master
     - type: codebuild
       name: Build
       build_image: aws/codebuild/nodejs:8.11.3
