@@ -18,7 +18,7 @@
   "homepage": "https://github.com/byu-oit/domain-identity-seminary-types#readme",
   "private": true,
   "dependencies": {
-    "aws-sdk": "^2.266.1",
+    "aws-sdk": "^2.271.1",
     "body-parser": "^1.17.1",
     "byu-group-mem": "0.0.2",
     "byu-jwt": "^0.2.3",

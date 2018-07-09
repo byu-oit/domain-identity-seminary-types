@@ -23,7 +23,8 @@ controllers.init({
     storageFile: 'seminary-types.json',
     logFile: 'seminary-types-logs.json',
     resourceNameSingular: 'seminary_type',
-    resourceNamePlural: 'seminary_types'
+    resourceNamePlural: 'seminary_types',
+    raiseEvents: true
 });
 
 

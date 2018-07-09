@@ -40,8 +40,7 @@
           }
         ],
         "tags": [
-          "admissions",
-          "Codes"
+          "admissions"
         ],
         "responses": {
           "200": {
@@ -88,8 +87,7 @@
           }
         ],
         "tags": [
-          "admissions",
-          "Codes"
+          "admissions"
         ],
         "responses": {
           "201": {
@@ -123,16 +121,15 @@
     },
     "/{seminary_type}": {
       "x-controller": "seminary_type",
-      "parameters": [
-        { "$ref": "#/parameters/seminary_type" }
-      ],
       "get": {
         "summary": "admissions Codes",
         "description": "Retrieve a specific seminary_type",
         "operationId": "getSeminaryType",
+        "parameters": [
+          { "$ref": "#/parameters/seminary_type" }
+        ],
         "tags": [
-          "admissions",
-          "Codes"
+          "admissions"
         ],
         "responses": {
           "200": {
@@ -164,6 +161,7 @@
         "description": "Modify a seminary_type",
         "operationId": "modifySeminaryType",
         "parameters": [
+          { "$ref": "#/parameters/seminary_type" },
           {
             "name": "seminary_type_modify",
             "in": "body",
@@ -175,8 +173,7 @@
           }
         ],
         "tags": [
-          "admissions",
-          "Codes"
+          "admissions"
         ],
         "responses": {
           "200": {
@@ -207,9 +204,11 @@
         "summary": "admissions Codes",
         "description": "Removes a seminary_type",
         "operationId": "removeSeminaryType",
+        "parameters": [
+          { "$ref": "#/parameters/seminary_type" }
+        ],
         "tags": [
-          "admissions",
-          "Codes"
+          "admissions"
         ],
         "responses": {
           "204": {
@@ -224,16 +223,15 @@
     },
     "/{seminary_type}/logs": {
       "x-controller": "seminary_type_logs",
-      "parameters": [
-        { "$ref": "#/parameters/seminary_type" }
-      ],
       "get": {
         "summary": "admissions Codes Archive",
         "description": "Retrieve the collection of logs for a seminary_type",
         "operationId": "getSeminaryTypeLogs",
+        "parameters": [
+          { "$ref": "#/parameters/seminary_type" }
+        ],
         "tags": [
-          "admissions",
-          "Codes"
+          "admissions"
         ],
         "responses": {
           "200": {
